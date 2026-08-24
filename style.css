@@ -273,7 +273,31 @@ body {
   color: #0b1120;
 }
 
+/* Base transition for smooth movement */
+.btn, 
+a.btn, 
+header a, 
+.contact a {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+/* Hover: Lift upward and enhance shadow without changing colors */
+.btn:hover, 
+a.btn:hover, 
+header a:hover, 
+.contact a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Active/Click state: Slight depression for tactile feedback */
+.btn:active, 
+a.btn:active, 
+header a:active, 
+.contact a:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
 /* Sections Common */
 .section {
   padding: 70px 0;
