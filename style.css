@@ -300,23 +300,26 @@ header a:active,
 }
 
 /* Responsive container for the hero buttons */
-header div:has(> a[href="#projects"]) {
+header div:has(> a[href="#projects"]),
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* Adds consistent spacing whether side-by-side or stacked */
+  gap: 14px;
   align-items: center;
-  justify-content: center; /* Adjust if your hero text is aligned left */
+  justify-content: center;
 }
 
-/* Optional: Make buttons full-width and neatly spaced on small screens */
+/* Stacking & spacing for hero buttons on small screens */
 @media (max-width: 640px) {
-  header div:has(> a[href="#projects"]) {
+  header div:has(> a[href="#projects"]),
+  .hero-actions {
     flex-direction: column;
     width: 100%;
-    gap: 14px; /* Space between buttons when vertically stacked */
+    gap: 14px;
   }
 
-  header div:has(> a[href="#projects"]) > a {
+  header div:has(> a[href="#projects"]) > a,
+  .hero-actions > a {
     width: 100%;
     text-align: center;
     justify-content: center;
@@ -363,10 +366,16 @@ header div:has(> a[href="#projects"]) {
   padding: 32px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  border-right: 4px solid var(--secondary);
+  border-left: 4px solid var(--primary); /* Matched left-side accent border across all cards */
   background: var(--card-bg);
   box-shadow: var(--shadow-sm);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover effect for Education and Profile sections */
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .about-card.highlight {
@@ -463,7 +472,7 @@ header div:has(> a[href="#projects"]) {
 /* Split Layout for Project Section */
 .project-card-split {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr; /* Gives more room to text, less to image */
+  grid-template-columns: 1.4fr 0.6fr;
   gap: 32px;
   align-items: center;
   padding: 32px;
@@ -471,12 +480,12 @@ header div:has(> a[href="#projects"]) {
 
 .project-cert-card {
   width: 100%;
-  max-width: 260px; /* Reduced from 360px for a cleaner, compact preview */
+  max-width: 260px;
   margin: 0 auto;
 }
 
 .project-cert-card .cert-img-wrapper {
-  aspect-ratio: 4 / 3; /* Keeps the preview tight and neatly cropped */
+  aspect-ratio: 4 / 3;
 }
 
 /* Mobile Adjustment */
@@ -488,9 +497,10 @@ header div:has(> a[href="#projects"]) {
   }
 
   .project-cert-card {
-    max-width: 280px; /* Keeps it centered and reasonably sized on phone screens */
+    max-width: 280px;
   }
 }
+
 /* Skills Categories */
 .skills-categories {
   display: flex;
@@ -547,7 +557,6 @@ header div:has(> a[href="#projects"]) {
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
 }
-
 
 /* Certification Filter Controls */
 .cert-filter-wrapper {
@@ -610,8 +619,8 @@ header div:has(> a[href="#projects"]) {
 .cert-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10; /* Maintains clean document proportions automatically */
-  height: auto;          /* Overrides rigid pixel height */
+  aspect-ratio: 16 / 10;
+  height: auto;
   background-color: var(--border);
 }
 
