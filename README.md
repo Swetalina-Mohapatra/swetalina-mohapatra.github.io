@@ -4,7 +4,7 @@ My personal portfolio
 
 ### BBA – Human Resources | Learning & Development
 
-<p align="center">
+<p align="left">
   <a href="https://swetalina-mohapatra.github.io/">🌐 View My Portfolio</a>
 </p>
 
