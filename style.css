@@ -777,6 +777,13 @@ header div:has(> a[href="#projects"]),
   box-shadow: var(--shadow-md);
   border: 2px solid var(--border);
   display: block;
+
+  /* Image sharpening & high-definition rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(104%) brightness(101%) unsharp-mask(none);
+  transform: translateZ(0); /* Triggers GPU hardware acceleration for crisper edges */
+  backface-visibility: hidden;
 }
 
 /* Footer */
