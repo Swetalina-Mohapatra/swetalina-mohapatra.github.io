@@ -298,6 +298,31 @@ header a:active,
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
+
+/* Responsive container for the hero buttons */
+header div:has(> a[href="#projects"]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Adds consistent spacing whether side-by-side or stacked */
+  align-items: center;
+  justify-content: center; /* Adjust if your hero text is aligned left */
+}
+
+/* Optional: Make buttons full-width and neatly spaced on small screens */
+@media (max-width: 640px) {
+  header div:has(> a[href="#projects"]) {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px; /* Space between buttons when vertically stacked */
+  }
+
+  header div:has(> a[href="#projects"]) > a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
 /* Sections Common */
 .section {
   padding: 70px 0;
