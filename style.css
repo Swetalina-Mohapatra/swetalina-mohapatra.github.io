@@ -363,7 +363,7 @@ header div:has(> a[href="#projects"]) {
   padding: 32px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  border-rright: 4px solid var(--primary);
+  border-right: 4px solid var(--primary);
   background: var(--card-bg);
   box-shadow: var(--shadow-sm);
   transition: background-color 0.25s ease, border-color 0.25s ease;
