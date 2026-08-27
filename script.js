@@ -46,37 +46,53 @@ document.addEventListener("keydown", function (event) {
 });
 
 // --- Main DOM Initialization ---
-// Certificate Filtering Logic
-document.addEventListener('DOMContentLoaded', () => {
-  const filterBtns = document.querySelectorAll('.cert-filter-btn');
-  const certCards = document.querySelectorAll('.cert-card');
+// --- Main DOM Initialization ---
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 1. Update the active button styling
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Attach Click Listeners to all Certificate Cards
+  const certCards = document.querySelectorAll(".cert-card");
+  certCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      // Prioritize data-img, fallback to the inner <img> src attribute
+      const innerImg = card.querySelector("img");
+      const imageSrc = card.getAttribute("data-img") || (innerImg ? innerImg.currentSrc || innerImg.src : "");
+      
+      const titleElem = card.querySelector("h4");
+      const subtitleElem = card.querySelector(".issuer");
+      let fallbackCaption = "";
+      if (titleElem && subtitleElem) {
+        fallbackCaption = `${titleElem.textContent.trim()} — ${subtitleElem.textContent.trim()}`;
+      }
 
-      // 2. Get the filter value (e.g., 'all', 'ai-tech', 'hr', 'finance')
-      const filterValue = btn.getAttribute('data-filter');
+      const captionText = card.getAttribute("data-caption") || fallbackCaption;
 
-      // 3. Show or hide cards based on the filter
-      certCards.forEach(card => {
-        if (filterValue === 'all') {
-          card.style.display = 'block'; // Show all
+      if (imageSrc) {
+        openModal(imageSrc, captionText);
+      }
+    });
+  });
+
+  // 2. Certificate Category Filter Tabs
+  const filterBtns = document.querySelectorAll(".cert-filter-btn");
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filterValue = btn.getAttribute("data-filter");
+      certCards.forEach((card) => {
+        // Exclude the Tata steel project preview card from filtering
+        if (card.classList.contains("project-cert-card")) return;
+
+        const cardCategory = card.getAttribute("data-category");
+        if (filterValue === "all" || cardCategory === filterValue) {
+          card.style.display = "block";
         } else {
-          const cardCategory = card.getAttribute('data-category');
-          if (cardCategory === filterValue) {
-            card.style.display = 'block'; // Show matching category
-          } else {
-            card.style.display = 'none'; // Hide non-matching
-          }
+          card.style.display = "none";
         }
       });
     });
   });
-});
-
   // 2. Dark / Light Mode Logic
   const themeToggleBtn = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
