@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swetalina Mohapatra | HR & Business Portfolio</title>
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q9V6NDJZY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q9V6NDJZY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-6Q9V6NDJZY');
-</script>
+    gtag('config', 'G-6Q9V6NDJZY');
+  </script>
 
- 
   <!-- SEO & Social Open Graph Meta Tags -->
   
   <!-- Primary Meta Tags -->
@@ -40,12 +40,15 @@
   <meta name="twitter:description" content="Explore my professional credentials, projects and resume." />
   <meta name="twitter:image" content="https://swetalina-mohapatra.github.io/assets/profile.jpg" />
 
-    <!-- Google Fonts & FontAwesome Icons -->
+  <!-- Google Fonts & FontAwesome Icons -->
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
 
@@ -61,8 +64,11 @@
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#certifications" class="nav-link">Certifications</a>
-          <a href="assets/resume.pdf" download="Swetalina_Mohapatra_Resume.pdf" class="btn-download-nav" onclick="gtag('event', 'download_resume', {'event_category': 'Engagement', 'event_label': 'Nav CV Download'});">
-             Download CV 
+          <a href="assets/resume.pdf" 
+             download="Swetalina_Mohapatra_Resume.pdf" 
+             class="btn-download-nav"
+             onclick="gtag('event', 'download_resume', {'event_category': 'Engagement', 'event_label': 'Nav CV Download'});">
+             Download CV
           </a>
           <a href="#contact" class="btn-nav nav-link">Contact</a>
         </div>
@@ -85,7 +91,7 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="container hero-content">
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
       <div class="hero-badge">
         <i class="fa-solid fa-graduation-cap"></i> BBA Graduate (HR) • Class of 2026
       </div>
@@ -108,16 +114,16 @@
   <!-- About & Education Section -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">Education & Profile</h2>
+      <h2 class="section-title" data-aos="fade-up">Education & Profile</h2>
       <div class="about-grid">
-        <div class="about-card highlight">
+        <div class="about-card highlight" data-aos="fade-up" data-aos-delay="100">
           <span class="card-meta">2023 – 2026</span>
           <h3>Bachelor of Business Administration (BBA)</h3>
           <p class="institution">Rourkela Institute of Management Studies, Sambalpur University</p>
           <p class="specialization"><strong>Specialisation:</strong> Human Resource Management (HR)</p>
           <p class="description">Focused on talent development, international HR practices, organizational psychology, and data-driven workforce planning.</p>
         </div>
-        <div class="about-card">
+        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
           <span class="card-meta">Career Objective</span>
           <h3>Leveraging AI & Analytics to Drive Strategic People Operations.</h3>
           <p class="description">"I believe the future of HR lies at the intersection of empathy and data. As a BBA student specializing in Human Resource Management, I combine academic knowledge with practical experience—such as designing upskilling frameworks for contract workforces at Tata Steel. I actively leverage digital analytics and AI workflows to identify skill gaps, streamline L&D initiatives, and drive measurable organizational productivity."</p>
@@ -129,8 +135,8 @@
   <!-- Featured Project Section -->
   <section id="projects" class="section bg-alt">
     <div class="container">
-      <h2 class="section-title">Industrial Project Study</h2>
-      <div class="project-card project-card-split">
+      <h2 class="section-title" data-aos="fade-up">Industrial Project Study</h2>
+      <div class="project-card project-card-split" data-aos="fade-up" data-aos-delay="100">
         
         <!-- Left Column: Study Details -->
         <div class="project-content">
@@ -173,10 +179,10 @@
   <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-title">Skills & Toolset</h2>
+      <h2 class="section-title" data-aos="fade-up">Skills & Toolset</h2>
       <div class="skills-categories">
         
-        <div class="skill-category-block">
+        <div class="skill-category-block" data-aos="fade-up" data-aos-delay="100">
           <h3>HR & Business Strategy</h3>
           <div class="skills-grid">
             <span class="skill-pill">Human Resource Management</span>
@@ -188,7 +194,7 @@
           </div>
         </div>
 
-        <div class="skill-category-block">
+        <div class="skill-category-block" data-aos="fade-up" data-aos-delay="200">
           <h3>Technical, Analytical & AI</h3>
           <div class="skills-grid">
             <span class="skill-pill">Data Analysis & Interpretation</span>
@@ -199,7 +205,7 @@
           </div>
         </div>
 
-        <div class="skill-category-block">
+        <div class="skill-category-block" data-aos="fade-up" data-aos-delay="300">
           <h3>Digital Tools & Platforms</h3>
           <div class="skills-grid">
             <span class="skill-pill">Google Workspace</span>
@@ -213,14 +219,14 @@
     </div>
   </section>
 
-<!-- Certifications Section -->
+  <!-- Certifications Section -->
   <section id="certifications" class="section bg-alt">
     <div class="container">
-      <h2 class="section-title">Professional Certifications</h2>
-      <p class="section-subtitle">Certifications & Credentials</p>
+      <h2 class="section-title" data-aos="fade-up">Professional Certifications</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Certifications & Credentials</p>
 
       <!-- Filter Tabs -->
-      <div class="cert-filter-wrapper">
+      <div class="cert-filter-wrapper" data-aos="fade-up" data-aos-delay="100">
         <button class="cert-filter-btn active" data-filter="all">All (10)</button>
         <button class="cert-filter-btn" data-filter="ai-tech">AI & Digital</button>
         <button class="cert-filter-btn" data-filter="hr">HR & Management</button>
@@ -230,7 +236,7 @@
       <div class="certs-grid">
         
         <!-- Cert 1 -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-digital-business.jpeg" data-caption="Introduction to Digital Business Skills — HP LIFE (Jul 2026)">
+        <div class="cert-card" data-aos="fade-up" data-category="ai-tech" data-img="assets/cert-digital-business.jpeg" data-caption="Introduction to Digital Business Skills — HP LIFE (Jul 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-digital-business.jpeg" alt="HP LIFE Digital Business Skills" onerror="this.src='https://via.placeholder.com/400x250?text=HP+LIFE+Digital+Business'">
             <span class="overlay-text">View Credential</span>
@@ -241,8 +247,8 @@
           </div>
         </div>
 
-        <!-- Cert 2 (FIXED) -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-critical-thinking.jpeg" data-caption="Critical Thinking in the AI Era — HP LIFE (Jun 2026)">
+        <!-- Cert 2 -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="50" data-category="ai-tech" data-img="assets/cert-critical-thinking.jpeg" data-caption="Critical Thinking in the AI Era — HP LIFE (Jun 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-critical-thinking.jpeg" alt="Critical Thinking in AI Era" onerror="this.src='https://via.placeholder.com/400x250?text=Critical+Thinking+in+AI+Era'">
             <span class="overlay-text">View Credential</span>
@@ -253,8 +259,8 @@
           </div>
         </div>
 
-        <!-- Cert 3 (FIXED) -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-m365-copilot.jpeg" data-caption="Learning Microsoft 365 Copilot for Work — LinkedIn Learning (Jun 2026)">
+        <!-- Cert 3 -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100" data-category="ai-tech" data-img="assets/cert-m365-copilot.jpeg" data-caption="Learning Microsoft 365 Copilot for Work — LinkedIn Learning (Jun 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-m365-copilot.jpeg" alt="Microsoft 365 Copilot" onerror="this.src='https://via.placeholder.com/400x250?text=Microsoft+365+Copilot'">
             <span class="overlay-text">View Credential</span>
@@ -265,8 +271,8 @@
           </div>
         </div>
 
-        <!-- Cert 4 (FIXED) -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-aws-prompt.jpeg" data-caption="Foundations of Prompt Engineering — AWS (Jun 2026)">
+        <!-- Cert 4 -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="150" data-category="ai-tech" data-img="assets/cert-aws-prompt.jpeg" data-caption="Foundations of Prompt Engineering — AWS (Jun 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-aws-prompt.jpeg" alt="AWS Foundations of Prompt Engineering" onerror="this.src='https://via.placeholder.com/400x250?text=AWS+Prompt+Engineering'">
             <span class="overlay-text">View Credential</span>
@@ -277,8 +283,8 @@
           </div>
         </div>
 
-        <!-- Cert 5 (FIXED) -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-yuva-ai.jpeg" data-caption="YUVA AI for All — Coursera by IndiaAI (Jun 2026)">
+        <!-- Cert 5 -->
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200" data-category="ai-tech" data-img="assets/cert-yuva-ai.jpeg" data-caption="YUVA AI for All — Coursera by IndiaAI (Jun 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-yuva-ai.jpeg" alt="YUVA AI for All" onerror="this.src='https://via.placeholder.com/400x250?text=YUVA+AI+for+All'">
             <span class="overlay-text">View Credential</span>
@@ -290,7 +296,7 @@
         </div>
 
         <!-- Cert 6 -->
-        <div class="cert-card" data-category="hr" data-img="assets/cert-ihrm.jpeg" data-caption="Basics of International Human Resource Management — UniAthena & Cambridge (Jun 2026)">
+        <div class="cert-card" data-aos="fade-up" data-category="hr" data-img="assets/cert-ihrm.jpeg" data-caption="Basics of International Human Resource Management — UniAthena & Cambridge (Jun 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-ihrm.jpeg" alt="Basics of International HRM" onerror="this.src='https://via.placeholder.com/400x250?text=International+HRM'">
             <span class="overlay-text">View Credential</span>
@@ -302,7 +308,7 @@
         </div>
 
         <!-- Cert 7 -->
-        <div class="cert-card" data-category="hr" data-img="assets/cert-hr-digital.jpeg" data-caption="Human Resources in Digital Age — RF Skilling Academy (May 2026)">
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="50" data-category="hr" data-img="assets/cert-hr-digital.jpeg" data-caption="Human Resources in Digital Age — RF Skilling Academy (May 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-hr-digital.jpeg" alt="HR in Digital Age" onerror="this.src='https://via.placeholder.com/400x250?text=HR+in+Digital+Age'">
             <span class="overlay-text">View Credential</span>
@@ -314,7 +320,7 @@
         </div>
 
         <!-- Cert 8 -->
-        <div class="cert-card" data-category="hr" data-img="assets/cert-psychology.jpeg" data-caption="Introduction to Psychology — Udemy (Jul 2026)">
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100" data-category="hr" data-img="assets/cert-psychology.jpeg" data-caption="Introduction to Psychology — Udemy (Jul 2026)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-psychology.jpeg" alt="Introduction to Psychology" onerror="this.src='https://via.placeholder.com/400x250?text=Introduction+to+Psychology'">
             <span class="overlay-text">View Credential</span>
@@ -326,7 +332,7 @@
         </div>
 
         <!-- Cert 9 -->
-        <div class="cert-card" data-category="ai-tech" data-img="assets/cert-ibm-ai.jpeg" data-caption="Getting Started with Artificial Intelligence — IBM SkillsBuild & NASSCOM (Dec 2025)">
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="150" data-category="ai-tech" data-img="assets/cert-ibm-ai.jpeg" data-caption="Getting Started with Artificial Intelligence — IBM SkillsBuild & NASSCOM (Dec 2025)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-ibm-ai.jpeg" alt="IBM SkillsBuild AI" onerror="this.src='https://via.placeholder.com/400x250?text=IBM+SkillsBuild+AI'">
             <span class="overlay-text">View Credential</span>
@@ -338,7 +344,7 @@
         </div>
 
         <!-- Cert 10 -->
-        <div class="cert-card" data-category="finance" data-img="assets/cert-bajaj-cpbfi.jpeg" data-caption="Banking, Finance and Insurance (CPBFI) — Bajaj Finserv (Nov 2025)">
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200" data-category="finance" data-img="assets/cert-bajaj-cpbfi.jpeg" data-caption="Banking, Finance and Insurance (CPBFI) — Bajaj Finserv (Nov 2025)">
           <div class="cert-img-wrapper">
             <img src="assets/cert-bajaj-cpbfi.jpeg" alt="Bajaj Finserv CPBFI" onerror="this.src='https://via.placeholder.com/400x250?text=Bajaj+Finserv+CPBFI'">
             <span class="overlay-text">View Credential</span>
@@ -365,7 +371,7 @@
   <!-- Contact Section with Profile Photo -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="contact-wrapper">
+      <div class="contact-wrapper" data-aos="fade-up">
         <div class="contact-details">
           <h2 class="section-title text-left">Get in Touch</h2>
           <p class="contact-subtext">Open to Management Trainee, Human Resources Associate, and People Operations roles.</p>
@@ -376,8 +382,11 @@
             <a href="mailto:swetalinaa.mohapatra04@gmail.com" class="btn btn-secondary">
               <i class="fa-solid fa-envelope"></i> Send Email
             </a>
-            <a href="assets/resume.pdf" download="Swetalina_Mohapatra_Resume.pdf" class="btn btn-secondary" onclick="gtag('event', 'download_resume', {'event_category': 'Engagement', 'event_label': 'Contact CV Download'});">
-            <i class="fa-solid fa-download"></i> Download CV 
+            <a href="assets/resume.pdf" 
+               download="Swetalina_Mohapatra_Resume.pdf" 
+               class="btn btn-secondary"
+               onclick="gtag('event', 'download_resume', {'event_category': 'Engagement', 'event_label': 'Contact CV Download'});">
+              <i class="fa-solid fa-download"></i> Download CV
             </a>
           </div>
         </div>
@@ -415,5 +424,16 @@
 
   <!-- Main JavaScript File -->
   <script src="script.js"></script>
+
+  <!-- AOS (Animate On Scroll) JS & Initialization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+  </script>
 </body>
 </html>
