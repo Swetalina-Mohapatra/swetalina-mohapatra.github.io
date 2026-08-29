@@ -20,11 +20,11 @@
   /* High-Contrast Dark Theme Variables */
   --primary: #38bdf8;
   --primary-hover: #7dd3fc;
-  --text-main: #f8fafc;       /* Crisp bright white for primary headings & key text */
-  --text-muted: #cbd5e1;      /* Elevated soft silver for clear legibility on cards */
+  --text-main: #f8fafc;       /* Bright crisp white for primary headings & labels */
+  --text-muted: #cbd5e1;      /* Elevated soft silver for clear legibility on dark slate cards */
   --bg-main: #0b1120;
-  --bg-alt: #0f172a;          /* Rich deep navy for alternating sections */
-  --border: #334155;          /* Visible, sharp card & section borders */
+  --bg-alt: #0f172a;          /* Rich navy for alternating sections */
+  --border: #334155;          /* Crisp card & component borders */
   --card-bg: #1e293b;
   --nav-bg: rgba(11, 17, 32, 0.95);
   --badge-bg: #1e3a8a;
@@ -180,7 +180,8 @@ body {
   background: var(--hero-grad);
 }
 
-.hero h1 {
+.hero h1, 
+.hero-title {
   font-size: 2.75rem;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -188,17 +189,28 @@ body {
   color: var(--text-main);
 }
 
-.hero p {
+.hero p,
+.hero-subtitle {
   font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 16px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
   color: var(--text-muted);
   max-width: 680px;
   margin: 0 auto 32px;
 }
 
-.hero-actions {
+/* Hero CTA Group & Button Spacing */
+.hero-actions,
+.hero-cta-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 14px;
 }
 
@@ -215,18 +227,22 @@ body {
 
 /* Action Buttons */
 .btn-primary, .btn-secondary, .btn-outline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-primary {
   background-color: var(--primary);
-  color: #fff;
+  color: #ffffff;
+  border: 1px solid var(--primary);
 }
 
 [data-theme="dark"] .btn-primary {
@@ -252,7 +268,9 @@ body {
 }
 
 .btn-cv-contact {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 600;
@@ -261,7 +279,7 @@ body {
   background-color: transparent;
   color: var(--primary);
   border: 1.5px solid var(--primary);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-cv-contact:hover {
@@ -273,48 +291,44 @@ body {
   color: #0b1120;
 }
 
-/* Base transition for smooth movement */
-.btn, 
-a.btn, 
-header a, 
-.contact a {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Hover: Lift upward and enhance shadow without changing colors */
+/* Base Hover: Raised Lift Effect Without Changing Colors */
 .btn:hover, 
 a.btn:hover, 
-header a:hover, 
-.contact a:hover {
+header a.btn:hover, 
+.contact a.btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Active/Click state: Slight depression for tactile feedback */
+/* Active/Click state: Subtle depression */
 .btn:active, 
 a.btn:active, 
-header a:active, 
-.contact a:active {
+header a.btn:active, 
+.contact a.btn:active {
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* Stacking & spacing for hero buttons on small screens */
+/* Responsive Stacking & Vertical Spacing on Mobile */
 @media (max-width: 640px) {
   header div:has(> a[href="#projects"]),
   .hero-actions,
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
-    gap: 14px;
+    gap: 14px; /* Explicit vertical space between stacked buttons */
   }
 
   header div:has(> a[href="#projects"]) > a,
   .hero-actions > a,
-  .hero-cta-group > a {
+  .hero-cta-group > a,
+  .hero-cta-group .btn {
     width: 100%;
+    max-width: 320px;
     text-align: center;
     justify-content: center;
+    display: inline-flex;
+    margin: 0;
   }
 }
 
@@ -359,7 +373,7 @@ header a:active,
   padding: 32px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary); /* Left accent border uniform across all cards */
   background: var(--card-bg);
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
@@ -615,11 +629,17 @@ header a:active,
   background-color: var(--border);
 }
 
-.cert-img-wrapper img {
+.cert-img-wrapper img,
+.project-cert-card .cert-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(106%) brightness(101%);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .overlay-text {
@@ -696,6 +716,8 @@ header a:active,
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   object-fit: contain;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  filter: contrast(104%) brightness(101%);
 }
 
 #modalCaption {
